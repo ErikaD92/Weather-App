@@ -1,0 +1,177 @@
+body {
+  font-family: sans-serif;
+  background-image: url(white-flower-branch.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+footer {
+  text-align: center;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+.card.app {
+  border: 1px solid #000000;
+  margin: 20px;
+  max-width: 60%;
+  margin: 10% auto;
+  background-color: #ffffff;
+  opacity: 0.8;
+}
+
+.title {
+  text-align: center;
+  color: #ff7700;
+  font-weight: 700;
+}
+
+.search-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 10px;
+  text-align: center;
+  padding: 4px;
+  border-radius: 30px;
+  border-color: #242424;
+}
+
+.search-button {
+  border-color: #ff7700;
+  color: #ff7700;
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 5px 15px;
+  font-weight: 700;
+  box-shadow: 0px 3px 5px rgba(128, 34, 0, 0.573);
+  transition: all 200ms ease-in-out;
+}
+
+.search-button:hover {
+  cursor: pointer;
+  background-color: #ff7700;
+  color: #ffffff;
+}
+
+.current-location {
+  border-color: #ff7700;
+  color: #ff7700;
+  background-color: #ffffff;
+  border-radius: 30px;
+  padding: 5px 15px;
+  font-weight: 700;
+  box-shadow: 0px 3px 5px rgba(128, 34, 0, 0.573);
+  transition: all 200ms ease-in-out;
+}
+
+.current-location:hover {
+  cursor: pointer;
+  background-color: #ff7700;
+  color: #ffffff;
+}
+
+.city {
+  font-size: 50px;
+  margin-bottom: 0;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.date {
+  font-size: 11px;
+}
+
+.measurements {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.temperature {
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.degrees {
+  font-size: 15px;
+  position: relative;
+  top: -20px;
+}
+
+.celsius-degrees {
+  text-decoration: none;
+}
+
+.fahrenheit-degrees {
+  text-decoration: none;
+}
+
+.emoji {
+  font-size: 100px;
+  text-align: center;
+}
+
+.emoji-caption {
+  font-size: 15px;
+  text-align: center;
+}
+
+.features {
+  font-size: 15px;
+  text-align: center;
+}
+
+.hour-view {
+  padding: 5px 10px;
+  margin: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 30px;
+  background-color: #ffffff;
+  border-color: #ff7700;
+  color: #ff7700;
+  cursor: pointer;
+  box-shadow: 0px 3px 5px rgba(128, 34, 0, 0.573);
+  transition: all 200ms ease-in-out;
+}
+
+.hour-view:hover {
+  cursor: pointer;
+  background-color: #ff7700;
+  color: #fff;
+}
+
+.next-day {
+  text-align: center;
+  font-size: 14px;
+}
+
+.darkTheme-button {
+  display: block;
+  margin: 15px auto;
+  padding: 5px 10px;
+  border-radius: 30px;
+  background-color: #000;
+  border-color: #000;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.573);
+  transition: all 200ms ease-in-out;
+}
+
+.darkTheme-button:hover {
+  background-color: #fff;
+  color: #000;
+  cursor: pointer;
+}
+
+.dark {
+  background: linear-gradient(to right, #333 0%, black 100%);
+}

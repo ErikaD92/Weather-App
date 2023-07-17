@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="src/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://kit.fontawesome.com/8c5ece9488.css" crossorigin="anonymous" />
+
+  <title>Weather app</title>
+</head>
+
+<body>
+  <header>
+    <button class="darkTheme-button">
+      Dark Theme
+    </button>
+  </header>
+
+  <div class="container body">
+    <div class="card app">
+      <div class="card-body">
+
+        <h1 class="title">
+          Weather App
+        </h1>
+        <br />
+
+        <!--barra di ricerca-->
+
+        <form id="search-container">
+          <div class="search-container">
+            <input type="search" class="search-bar" id="search-bar" name="search" placeholder="Name of the city" />
+            <button class="search-button">
+              Search
+            </button>
+            <button class="current-location" id="current-location-button">
+              Here
+            </button>
+          </div>
+        </form>
+        <br />
+
+        <!--corpo con meteo della città-->
+        <div class="row">
+          <div class="col-4">
+            <h2 class="city" id="city-name">
+              Milan
+            </h2>
+            <small class="date" id="todayDate">
+              Sunday 26 February 2023, 17:45
+            </small>
+          </div>
+          <div class="col-4">
+            <div class="emoji">
+              ☀️
+            </div>
+            <div class="emoji-caption" id="weather-description">
+              Sunny
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="measurements">
+              <span class="temperature" id="temperature">
+                25
+              </span>
+              <span class="degrees">
+                <a href="#" class="celsius-degrees" id="celsiusTemp">°C</a> |
+                <a href="#" class="fahrenheit-degrees" id="fahrenheitTemp">°F</a>
+              </span>
+            </div>
+            <br />
+            <div class="features" id="clouds">
+              Clouds: 0%
+            </div>
+            <div class="features" id="humidity">
+              Humidity: 65%
+            </div>
+            <div class="features" id="wind-speed">
+              Wind: 10m/s
+            </div>
+          </div>
+        </div>
+
+        <button class="hour-view">
+          1h view
+        </button>
+
+        <!--overview della settimana seguente-->
+        <div class="card">
+          <div class="card-body">
+            <form>
+              <div class="row">
+                <div class="col-2 next-day">
+                  Mon
+                  <br />
+                  ☀️
+                  <br />
+                  <strong>25°</strong>~13°
+                </div>
+                <div class="col-2 next-day">
+                  Tue
+                  <br />
+                  🌤️
+                  <br />
+                  <strong>23°</strong>~12°
+                </div>
+                <div class="col-2 next-day">
+                  Wen
+                  <br />
+                  ⛅
+                  <br />
+                  <strong>21°</strong>~10°
+                </div>
+                <div class="col-2 next-day">
+                  Thu
+                  <br />
+                  ⛅
+                  <br />
+                  <strong>22°</strong>~11°
+                </div>
+                <div class="col-2 next-day">
+                  Fri
+                  <br />
+                  🌤️
+                  <br />
+                  <strong>23°</strong>~11°
+                </div>
+                <div class="col-2 next-day">
+                  Sat
+                  <br />
+                  🌤️
+                  <br />
+                  <strong>24°</strong>~12°
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div>
+        &star;
+        This project was coded by Erika and is <a href="https://github.com/ErikaD92/Weather-app">open-source on
+          GitHub</a> and <a href="">hosted on Netlify</a>
+        &star;
+      </div>
+    </footer>
+  </div>
+
+  <script src="src/index.js"></script>
+</body>
+
+</html>
