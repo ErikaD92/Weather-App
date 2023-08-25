@@ -76,6 +76,8 @@ function showTemperature(response) {
   let windSpeed = Math.round(response.data.wind.speed);
   let windSpeedElement = document.querySelector("#wind-speed");
   windSpeedElement.innerHTML = `Wind: ${windSpeed}m/s`;
+  //let emojiElement.innerHTML = document.querySelector(`#emoji-description`);
+  //emojiElement.setAttribute("src" ) =
 }
 
 function searchCity(city) {
