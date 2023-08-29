@@ -33,7 +33,7 @@
         </h1>
         <br />
 
-        <!--barra di ricerca-->
+        <!--search bar-->
         <form id="search-container">
           <div class="search-container">
             <input type="search" class="search-bar" id="search-bar" name="search" placeholder="Name of the city" />
@@ -47,25 +47,24 @@
         </form>
         <br />
 
-        <!--corpo con meteo della città-->
+        <!--body of the app-->
         <div class="row">
-          <div class="col-4">
+          <div class="col-6">
             <h2 class="city" id="city-name">
-              Milan
+              Piacenza
             </h2>
             <small class="date" id="todayDate">
               Sunday 26 February 2023, 17:45
             </small>
           </div>
-          <div class="col-4">
-            <div class="emoji">
-              ☀️
-            </div>
+          <div class="col-3">
+            <img src="" class="emoji" id="emoji">
+            </img>
             <div class="emoji-caption" id="weather-description">
-              Sunny
+              Sunny-day
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-3">
             <div class="measurements">
               <span class="temperature" id="temperature">
                 25
@@ -76,14 +75,14 @@
               </span>
             </div>
             <br />
-            <div class="features" id="clouds">
-              Clouds: 0%
+            <div class="features" id="perceived">
+              Perceived:
             </div>
             <div class="features" id="humidity">
-              Humidity: 65%
+              Humidity:
             </div>
             <div class="features" id="wind-speed">
-              Wind: 10m/s
+              Wind:
             </div>
           </div>
         </div>
@@ -92,7 +91,7 @@
           1h view
         </button>
 
-        <!--overview della settimana seguente-->
+        <!--overview of the following week-->
         <div class="card">
           <div class="card-body">
             <form>
@@ -145,8 +144,10 @@
         </div>
       </div>
     </div>
+
+    <!--footer-->
     <footer>
-      <div>
+      <div class="footer">
         &star;
         This project was coded by Erika and is <a href="https://github.com/ErikaD92/Weather-app">open-source on
           GitHub</a> and <a href="https://jazzy-cassata-f67884.netlify.app">hosted on Netlify</a>
