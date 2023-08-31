@@ -180,3 +180,7 @@ footer {
 .dark {
   background: linear-gradient(to right, #333 0%, black 100%);
 }
+
+.dark .footer {
+  color: #fff;
+}
