@@ -125,6 +125,17 @@ function getCurrentLocation(event) {
 let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
+// Display currrent position when opening the page
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else {
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+getLocation();
+
 // Display a fake temperature in Celsius and add a link to convert it to Fahrenheit.
 // Fahrenheit = (Celsius x 1.8) + 32
 function fahrenheitButton(event) {
