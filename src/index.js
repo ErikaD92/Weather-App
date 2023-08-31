@@ -57,10 +57,12 @@ todayDate.innerHTML = formatDate(today);
 
 // city name and temperature searched
 function showTemperature(response) {
-  console.log(response);
   let city = response.data.city;
   let cityElement = document.querySelector("#city-name");
   cityElement.innerHTML = `${city}`;
+  let country = response.data.country;
+  let countryElement = document.querySelector("#country-name");
+  countryElement.innerHTML = `${country}`;
   let weather = response.data.condition.description;
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = `${weather}`;
@@ -96,7 +98,6 @@ function searchCity(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#search-bar").value;
-  console.log(city);
 
   searchCity(city);
 }
@@ -106,13 +107,12 @@ searchContainer.addEventListener("submit", handleSubmit);
 
 // current geolocation
 function showPosition(position) {
-  console.log(position);
-  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
-  let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
+  let latitude = position.coords.latitude;
   let units = "metric";
-  let apiKey = "bd7097700a582e58cd9044faf3a0db67";
-  let apiUrl = `${apiEndpoint}?lat=${latitude}&lon=${longitude}&units=${units}&appid=${apiKey}`;
+  let apiKey = "3d46ff005704t71ed8eo23bfda56259a";
+  let apiEndpoint = "https://api.shecodes.io/weather/v1/current";
+  let apiUrl = `${apiEndpoint}?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=${units}`;
 
   axios.get(apiUrl).then(showTemperature);
 }

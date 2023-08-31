@@ -84,6 +84,11 @@ footer {
   margin-top: 10px;
 }
 
+.country {
+  font-size: 25px;
+  font-weight: 700;
+}
+
 .date {
   font-size: 11px;
 }
