@@ -51,9 +51,88 @@ function formatDate(today) {
   }
   return `${day}, ${month} ${date}, ${year} <br> ${hours}:${minutes}`;
 }
+
 let todayDate = document.querySelector("#todayDate");
 let today = new Date();
 todayDate.innerHTML = formatDate(today);
+
+// forecast
+function showForecast(response) {
+  console.log(response);
+
+  let emoji1 = response.data.daily[0].condition.icon;
+  let emojiElement1 = document.querySelector("#emoji-day1");
+  emojiElement1.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${emoji1}.png`
+  );
+  let maxTemperature1 = Math.round(response.data.daily[0].temperature.maximum);
+  let maxTemperatureElement1 = document.querySelector("#maxtemperature-day1");
+  maxTemperatureElement1.innerHTML = `${maxTemperature1}°`;
+  let minTemperature1 = Math.round(response.data.daily[0].temperature.minimum);
+  let minTemperatureElement1 = document.querySelector("#mintemperature-day1");
+  minTemperatureElement1.innerHTML = `${minTemperature1}°`;
+  let emoji2 = response.data.daily[0].condition.icon;
+  let emojiElement2 = document.querySelector("#emoji-day2");
+  emojiElement2.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${emoji2}.png`
+  );
+  let maxTemperature2 = Math.round(response.data.daily[1].temperature.maximum);
+  let maxTemperatureElement2 = document.querySelector("#maxtemperature-day2");
+  maxTemperatureElement2.innerHTML = `${maxTemperature2}°`;
+  let minTemperature2 = Math.round(response.data.daily[1].temperature.minimum);
+  let minTemperatureElement2 = document.querySelector("#mintemperature-day2");
+  minTemperatureElement2.innerHTML = `${minTemperature2}°`;
+  let emoji3 = response.data.daily[2].condition.icon;
+  let emojiElement3 = document.querySelector("#emoji-day3");
+  emojiElement3.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${emoji3}.png`
+  );
+  let maxTemperature3 = Math.round(response.data.daily[2].temperature.maximum);
+  let maxTemperatureElement3 = document.querySelector("#maxtemperature-day3");
+  maxTemperatureElement3.innerHTML = `${maxTemperature3}°`;
+  let minTemperature3 = Math.round(response.data.daily[2].temperature.minimum);
+  let minTemperatureElement3 = document.querySelector("#mintemperature-day3");
+  minTemperatureElement3.innerHTML = `${minTemperature3}°`;
+  let emoji4 = response.data.daily[3].condition.icon;
+  let emojiElement4 = document.querySelector("#emoji-day4");
+  emojiElement4.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${emoji4}.png`
+  );
+  let maxTemperature4 = Math.round(response.data.daily[3].temperature.maximum);
+  let maxTemperatureElement4 = document.querySelector("#maxtemperature-day4");
+  maxTemperatureElement4.innerHTML = `${maxTemperature4}°`;
+  let minTemperature4 = Math.round(response.data.daily[3].temperature.minimum);
+  let minTemperatureElement4 = document.querySelector("#mintemperature-day4");
+  minTemperatureElement4.innerHTML = `${minTemperature4}°`;
+  let emoji5 = response.data.daily[4].condition.icon;
+  let emojiElement5 = document.querySelector("#emoji-day5");
+  emojiElement5.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${emoji5}.png`
+  );
+  let maxTemperature5 = Math.round(response.data.daily[4].temperature.maximum);
+  let maxTemperatureElement5 = document.querySelector("#maxtemperature-day5");
+  maxTemperatureElement5.innerHTML = `${maxTemperature5}°`;
+  let minTemperature5 = Math.round(response.data.daily[4].temperature.minimum);
+  let minTemperatureElement5 = document.querySelector("#mintemperature-day5");
+  minTemperatureElement5.innerHTML = `${minTemperature5}°`;
+  let emoji6 = response.data.daily[5].condition.icon;
+  let emojiElement6 = document.querySelector("#emoji-day6");
+  emojiElement6.setAttribute(
+    "src",
+    `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${emoji6}.png`
+  );
+  let maxTemperature6 = Math.round(response.data.daily[5].temperature.maximum);
+  let maxTemperatureElement6 = document.querySelector("#maxtemperature-day6");
+  maxTemperatureElement6.innerHTML = `${maxTemperature6}°`;
+  let minTemperature6 = Math.round(response.data.daily[5].temperature.minimum);
+  let minTemperatureElement6 = document.querySelector("#mintemperature-day6");
+  minTemperatureElement6.innerHTML = `${minTemperature6}°`;
+}
 
 // city name and temperature searched
 function showTemperature(response) {
@@ -89,10 +168,13 @@ function showTemperature(response) {
 function searchCity(city) {
   let units = "metric";
   let apiKey = "3d46ff005704t71ed8eo23bfda56259a";
-  let apiEndpoint = "https://api.shecodes.io/weather/v1/current";
-  let apiUrl = `${apiEndpoint}?query=${city}&units=${units}&key=${apiKey}`;
+  let apiEndpointCurrent = "https://api.shecodes.io/weather/v1/current";
+  let apiEndpointForecast = "https://api.shecodes.io/weather/v1/forecast";
+  let apiUrlCurrent = `${apiEndpointCurrent}?query=${city}&units=${units}&key=${apiKey}`;
+  let apiUrlForecast = `${apiEndpointForecast}?query=${city}&units=${units}&key=${apiKey}`;
 
-  axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrlCurrent).then(showTemperature);
+  axios.get(apiUrlForecast).then(showForecast);
 }
 
 function handleSubmit(event) {
@@ -111,10 +193,13 @@ function showPosition(position) {
   let latitude = position.coords.latitude;
   let units = "metric";
   let apiKey = "3d46ff005704t71ed8eo23bfda56259a";
-  let apiEndpoint = "https://api.shecodes.io/weather/v1/current";
-  let apiUrl = `${apiEndpoint}?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=${units}`;
+  let apiEndpointCurrent = "https://api.shecodes.io/weather/v1/current";
+  let apiEndpointForecast = "https://api.shecodes.io/weather/v1/forecast";
+  let apiUrlCurrent = `${apiEndpointCurrent}?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=${units}`;
+  let apiUrlForecast = `${apiEndpointForecast}?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=${units}`;
 
-  axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrlCurrent).then(showTemperature);
+  axios.get(apiUrlForecast).then(showForecast);
 }
 
 function getCurrentLocation(event) {

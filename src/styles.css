@@ -99,7 +99,7 @@ footer {
 }
 
 .temperature {
-  font-size: 44px;
+  font-size: 45px;
   font-weight: 700;
 }
 
@@ -147,9 +147,17 @@ footer {
   color: #fff;
 }
 
-.next-day {
+.forecast {
   text-align: center;
-  font-size: 14px;
+  font-size: 15px;
+}
+
+.next-days {
+  font-weight: 700;
+}
+
+.maxtemp {
+  font-weight: 700;
 }
 
 .footer {
