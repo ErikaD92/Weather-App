@@ -145,7 +145,8 @@ function showTemperature(response) {
   let weather = response.data.condition.description;
   let weatherDescription = document.querySelector("#weather-description");
   weatherDescription.innerHTML = `${weather}`;
-  let temperature = Math.round(response.data.temperature.current);
+  celsiusTemperature = response.data.temperature.current;
+  let temperature = Math.round(celsiusTemperature);
   let temperatureElement = document.querySelector("#temperature");
   temperatureElement.innerHTML = `${temperature}`;
   let feels = response.data.temperature.feels_like;
@@ -221,23 +222,30 @@ function getLocation() {
 
 getLocation();
 
-// Display a fake temperature in Celsius and add a link to convert it to Fahrenheit.
-// Fahrenheit = (Celsius x 1.8) + 32
+// Display temperature in Celsius and add a link to convert it to Fahrenheit.
+// Fahrenheit
 function fahrenheitButton(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
-  let fahrenheit = parseFloat(temperature.innerHTML) * 1.8 + 32;
+  //remove the "active class"
+  celsiusTemp.classList.remove("active");
+  fahrenheitTemp.classList.add("active");
+  let fahrenheit = parseFloat(celsiusTemperature * 9) / 5 + 32;
   temperature.innerHTML = fahrenheit.toFixed(0);
 }
+
+let celsiusTemperature = null;
 
 let fahrenheitTemp = document.querySelector("#fahrenheitTemp");
 fahrenheitTemp.addEventListener("click", fahrenheitButton);
 
-// Celsius = (Fahrenheit - 32) / 1.8
+// Celsius
 function celsiusButton(event) {
   event.preventDefault();
   let temperature = document.querySelector("#temperature");
-  let celsius = (parseFloat(temperature.innerHTML) - 32) / 1.8;
+  celsiusTemp.classList.add("active");
+  fahrenheitTemp.classList.remove("active");
+  let celsius = celsiusTemperature;
   temperature.innerHTML = celsius.toFixed(0);
 }
 

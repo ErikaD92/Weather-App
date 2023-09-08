@@ -109,6 +109,15 @@ footer {
   top: -20px;
 }
 
+.measurements .active {
+  color: #000;
+  cursor: default;
+}
+
+.measurements .active {
+  text-decoration: none;
+}
+
 .celsius-degrees {
   text-decoration: none;
 }
