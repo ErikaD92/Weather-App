@@ -109,23 +109,6 @@ footer {
   top: -20px;
 }
 
-.measurements .active {
-  color: #000;
-  cursor: default;
-}
-
-.measurements .active {
-  text-decoration: none;
-}
-
-.celsius-degrees {
-  text-decoration: none;
-}
-
-.fahrenheit-degrees {
-  text-decoration: none;
-}
-
 .emoji-caption {
   font-size: 15px;
   text-align: center;
@@ -161,8 +144,17 @@ footer {
   font-size: 15px;
 }
 
-.next-days {
+.forecastDate {
   font-weight: 700;
+  text-align: center;
+}
+
+.forecast-temperature {
+  text-align: center;
+}
+
+.forecast-icon {
+  text-align: center;
 }
 
 .maxtemp {
